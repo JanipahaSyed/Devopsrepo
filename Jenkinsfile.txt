@@ -5,6 +5,7 @@ pipeline{
         stage('Build'){
             agent none
             options{
+timeout(time:1 , unit:'MINUTE')
                 skipDefaultCheckout()
 		timeout(time:1 , unit:'MINUTE')
             }
