@@ -1,14 +1,12 @@
 pipeline{
-    agent any
-	/*options{
-		skipDefaultCheckout()
-	       }*/
+    agent none
+	
     stages{
         stage('Build'){
             agent none
-            /*options{
+            options{
                 skipDefaultCheckout()
-            }*/
+            }
             steps{
                 echo "Hello world"
 		echo "I have committed the code"
