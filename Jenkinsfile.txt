@@ -1,17 +1,23 @@
 pipeline{
-    
+    agent any
 	
     stages{
-        stage('Build'){
-            agent none
-            options{
-timeout(time:1 , unit:'MINUTE')
-                skipDefaultCheckout()
-		timeout(time:1 , unit:'MINUTE')
-            }
+        stage('Master'){
+		when{
+			branch 'master'
+            	    }
             steps{
-                echo "Hello world"
-		echo "I have committed the code"
+                echo "Iam in master branch"
+		
+            }
+        }
+	stage('DEV'){
+            when {
+			branch 'dev'
+		}
+            steps{
+                echo "I am in dev branch"
+		
             }
         }
     }
