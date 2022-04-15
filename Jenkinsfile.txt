@@ -3,11 +3,11 @@ pipeline{
     stages{
         stage('Build'){
            when{
-                buildingTag()
+                changelog='.*some_text.*'
             }
         
         steps{
-            echo "building tag"
+            echo "change log"
         }
         }
     }
